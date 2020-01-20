@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
  features = "Feature"
- ,glue={"stepDefinition"}
+ ,glue={"br.com.rsinet.hub_bdd.stepDefinition"}
  )
 
 public class TestRunner {
