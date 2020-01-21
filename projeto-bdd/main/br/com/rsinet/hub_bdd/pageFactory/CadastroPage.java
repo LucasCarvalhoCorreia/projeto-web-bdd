@@ -73,12 +73,6 @@ public class CadastroPage {
 	 * Método utilizado para receber as informações da massa de dados e preencher o
 	 * formulario.
 	 */
-	
-	
-	public void userName(String userName) throws Exception {
-		this.txt_UserName.sendKeys(userName);
-	}
-	
 	public void cadastrarUsuario(String txt_UserName, String txt_Email, String txt_Password, String txt_ConfirmPassword,
 			String txt_FirstName, String txt_LastName, String txt_Telefone, String combo_Pais, String txt_Cidade,
 			String txt_Endereco, String txt_Estado, String txt_Cep) {

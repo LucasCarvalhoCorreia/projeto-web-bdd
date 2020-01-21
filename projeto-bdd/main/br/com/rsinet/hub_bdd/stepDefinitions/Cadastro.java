@@ -26,10 +26,16 @@ public class Cadastro {
 	public void que_o_usuario_esteja_na_tela_inicial_Sucesso() throws Throwable {
 		driver = DriverFactory.iniciaBrowser();
 
+		/* Comando responsavel por ler o arquivo e aba do excel especificados. */
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Cadastro");
 
+		 /* Comando responsavel por iniciar os elementos dentro da pageFactory
+		  	especificada.*/
 		homePage = PageFactory.initElements(driver, HomePage.class);
 		cadastroPage = PageFactory.initElements(driver, CadastroPage.class);
+		
+		 /* Comando responsavel por aguardar o tempo especificado entre as linhas de
+		 	comando.*/
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
@@ -45,6 +51,9 @@ public class Cadastro {
 
 	@When("^Preencher o formulario de cadastro$")
 	public void preencher_o_formulario_de_cadastro() throws Throwable {
+		
+		 /* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
+		  	uma variavel.*/
 		String txt_UserName = ExcelUtils.getCellData(1, Constant.userName);
 		String txt_Email = ExcelUtils.getCellData(2, Constant.email);
 		String txt_Password = ExcelUtils.getCellData(3, Constant.password);
@@ -79,11 +88,16 @@ public class Cadastro {
 
 	@Then("^Verifica se o usuario esta logado$")
 	public void verifica_se_o_usuario_esta_logado() throws Throwable {
+		
+		 /* Comandos responsaveis por receber os valores necessários para acionar o
+		  	assert.*/
 		String condicao = ExcelUtils.getCellData(1, Constant.userName);
 		String mensagem = ExcelUtils.getCellData(3, Constant.mensagemAssertCadastroSucesso);
 
 		cadastroPage.pega_UserLogon(driver);
 		String pass = cadastroPage.user_Logon.getText();
+		
+		/* Comando responsavel por conferir se o teste agiu como o esperado. */
 		Assert.assertTrue(mensagem, pass.equals(condicao));
 
 		Prints.tirarPrintsDeSucesso("CadastroSucesso ", driver);
@@ -92,6 +106,8 @@ public class Cadastro {
 
 	@When("^Preencher o formulario de cadastro com a confirmacao de senha diferente da senha$")
 	public void preencher_o_formulario_de_cadastro_com_a_confirmacao_de_senha_diferente_da_senha() throws Throwable {
+		/* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
+		 	uma variavel.*/
 		String txt_UserName = ExcelUtils.getCellData(1, Constant.userName);
 		String txt_Email = ExcelUtils.getCellData(2, Constant.email);
 		String txt_Password = ExcelUtils.getCellData(3, Constant.password);
@@ -132,6 +148,8 @@ public class Cadastro {
 
 		cadastroPage.clicaPassword();
 
+		/* Comandos responsaveis por receber os valores necessários para acionar o
+		 	assert.*/
 		String condicao = ExcelUtils.getCellData(1, Constant.condicaoAssertCadastroErro);
 		String mensagem = ExcelUtils.getCellData(2, Constant.mensagemAssertCadastroErro);
 		String pass = cadastroPage.not_Password.getText();

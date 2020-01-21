@@ -1,7 +1,7 @@
 Feature: Cadastro de novo usuario.
 
 Background: 
-		Given Que o usuario esteja na tela inicial com a intencao de realizar um cadastro
+	Given Que o usuario esteja na tela inicial com a intencao de realizar um cadastro
     When Ele clicar no link de login
     And Clicar no link de cadastrar
 

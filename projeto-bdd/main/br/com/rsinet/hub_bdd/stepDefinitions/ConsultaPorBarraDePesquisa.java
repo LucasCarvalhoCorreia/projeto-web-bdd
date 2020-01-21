@@ -29,13 +29,14 @@ public class ConsultaPorBarraDePesquisa {
 
 		/* Comando responsavel por ler o arquivo e aba do excel especificados. */
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "PesquisaBarra");
-		/*
-		 * Comando responsavel por iniciar os elementos dentro da pageFactory
-		 * especificada.
-		 */
+		
+		 /* Comando responsavel por iniciar os elementos dentro da pageFactory
+		 	especificada.*/
 		homePage = PageFactory.initElements(driver, HomePage.class);
 		pesquisaPage = PageFactory.initElements(driver, PesquisaPage.class);
 
+		/* Comando responsavel por aguardar o tempo especificado entre as linhas de
+		 	comando.*/
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
@@ -46,10 +47,8 @@ public class ConsultaPorBarraDePesquisa {
 
 	@When("^Digitar e pesquisar o nome do produto desejado$")
 	public void digitar_e_pesquisar_o_nome_do_produto_desejado() throws Throwable {
-		/*
-		 * Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
-		 * uma variavel
-		 */
+		 /* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
+		 	uma variavel.*/
 		String txt_Pesquisa = (ExcelUtils.getCellData(1, Constant.pesquisaBarra));
 		homePage.pesquisar(txt_Pesquisa);
 	}
@@ -67,13 +66,12 @@ public class ConsultaPorBarraDePesquisa {
 
 	@Then("^Checar se o produto selecionado foi encontrado$")
 	public void checar_se_o_produto_selecionado_foi_encontrado() throws Throwable {
-		/*
-		 * Comandos responsaveis por receber os valores necessários para acionar o
-		 * assert.
-		 */
+		 /* Comandos responsaveis por receber os valores necessários para acionar o
+		 	assert.*/
 		String condicao = ExcelUtils.getCellData(1, Constant.condicaoAssertBarra);
 		String mensagem = ExcelUtils.getCellData(2, Constant.mensagemAssertBarra);
 		String elemento = pesquisaPage.desc_Produto.getText();
+		
 		/* Comando responsavel por conferir se o teste agiu como o esperado. */
 		Assert.assertTrue(mensagem, elemento.equals(condicao));
 		
@@ -83,10 +81,8 @@ public class ConsultaPorBarraDePesquisa {
 
 	@When("^Digitar e pesquisar o nome do produto desejado que nao existe no banco de dados$")
 	public void digitar_e_pesquisar_o_nome_do_produto_desejado_que_nao_existe_no_banco_de_dados() throws Throwable {
-		/*
-		 * Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
-		 * uma variavel
-		 */
+		 /* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
+		 	uma variavel.*/
 		String txt_Pesquisa = (ExcelUtils.getCellData(5, Constant.pesquisaBarraErro));
 		homePage.pesquisar(txt_Pesquisa);
 	}
@@ -94,12 +90,11 @@ public class ConsultaPorBarraDePesquisa {
 	@Then("^Checar no banco de dados e informar que nao foi encontrado nenhum resultado para o produto desejado$")
 	public void checar_no_banco_de_dados_e_informar_que_nao_foi_encontrado_nenhum_resultado_para_o_produto_desejado()
 			throws Throwable {
-		/*
-		 * Comandos responsaveis por receber os valores necessários para acionar o
-		 * assert.
-		 */
+		 /* Comandos responsaveis por receber os valores necessários para acionar o
+		 	assert.*/
 		String elemento = ExcelUtils.getCellData(5, Constant.pesquisaBarraErro);
 		String resposta = homePage.result_Produto.getText();
+		
 		/* Comando responsavel por conferir se o teste agiu como o esperado. */
 		Assert.assertTrue("Nenhum resultado encontrado para " + elemento + "!", resposta.equals("No results for " + "\"" + elemento + "\""));
 		

@@ -18,44 +18,42 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class ConsultaPorCategoria {
-	
+
 	private WebDriver driver;
 	private HomePage homePage;
 	private PesquisaPage pesquisaPage;
 	private PagamentoPage pagamentoPage;
-	
+
 	@Given("^Que o usuario esteja na tela inicial com a intencao de realizar uma pesquisa por categoria ou uma compra$")
-	public void que_o_usuario_esteja_na_tela_inicial_com_a_intencao_de_realizar_uma_pesquisa_por_categoria_ou_uma_compra() throws Throwable {
+	public void que_o_usuario_esteja_na_tela_inicial_com_a_intencao_de_realizar_uma_pesquisa_por_categoria_ou_uma_compra()
+			throws Throwable {
 		driver = DriverFactory.iniciaBrowser();
 
-		/* Comando responsavel por ler o arquivo e aba do excel especificados. */
+		/* Comando responsavel por ler o arquivo e aba do excel especificados.*/
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Pagamento");
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "PesquisaCat");
-		/*
-		 * Comando responsavel por iniciar os elementos dentro da pageFactory
-		 * especificada.
-		 */
+
+		/* Comando responsavel por iniciar os elementos dentro da pageFactory
+		 	especificada.*/
 		homePage = PageFactory.initElements(driver, HomePage.class);
 		pesquisaPage = PageFactory.initElements(driver, PesquisaPage.class);
 		pagamentoPage = PageFactory.initElements(driver, PagamentoPage.class);
-		
+
+		/* Comando responsavel por aguardar o tempo especificado entre as linhas de
+		 	comando.*/
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
-	
+
 	@When("^Ele efetuar o login$")
 	public void ele_efetuar_o_login() throws Throwable {
-		/*
-		 * Comando responsavel por aguardar o tempo especificado entre as linhas de
-		 * comando.
-		 */
+		 /* Comando responsavel por aguardar o tempo especificado entre as linhas de
+		 	comando.*/
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		homePage.bt_UserIcon();
 
-		/*
-		 * Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
-		 * uma variavel
-		 */
+		 /* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
+		 	uma variavel.*/
 		String txt_UserLogin = ExcelUtils.getCellData(1, Constant.userNameCat);
 		String txt_PasswordLogin = ExcelUtils.getCellData(2, Constant.passwordCat);
 		homePage.preencheLogin(txt_UserLogin, txt_PasswordLogin);
@@ -96,6 +94,7 @@ public class ConsultaPorCategoria {
 
 		pagamentoPage.limpaUser();
 		pagamentoPage.limpaPass();
+		
 		pagamentoPage.logaContaPay(txt_UserNamePay, txt_PasswordPay);
 
 		pagamentoPage.check_SavePay();
@@ -108,17 +107,16 @@ public class ConsultaPorCategoria {
 
 	@Then("^Verifica se a compra foi efetuada com sucesso$")
 	public void verifica_se_a_compra_foi_efetuada_com_sucesso() throws Throwable {
-		/*
-		 * Comandos responsaveis por receber os valores necessários para acionar o
-		 * assert.
-		 */
+		 /* Comandos responsaveis por receber os valores necessários para acionar o
+		 	assert.*/
 		String condicao = ExcelUtils.getCellData(2, Constant.condicaoAssertMassaSucesso);
 		String mensagem = ExcelUtils.getCellData(1, Constant.mensagemAssertMassaSucesso);
 		pagamentoPage.pega_Pago(driver);
 		String aviso = pagamentoPage.lbl_Pago.getText();
+		
 		/* Comando responsavel por conferir se o teste agiu como o esperado. */
 		Assert.assertTrue(mensagem, aviso.equals(condicao));
-		
+
 		Prints.tirarPrintsDeSucesso("ConsultaPorCategoriaSucesso ", driver);
 		DriverFactory.fechaBrowser(driver);
 	}
@@ -141,16 +139,15 @@ public class ConsultaPorCategoria {
 
 	@Then("^Checar se a quantidade de produtos solicitada corresponde a quantidade no carrinho$")
 	public void checar_se_a_quantidade_de_produtos_solicitada_corresponde_a_quantidade_no_carrinho() throws Throwable {
-		/*
-		 * Comandos responsaveis por receber os valores necessários para acionar o
-		 * assert.
-		 */
+		 /* Comandos responsaveis por receber os valores necessários para acionar o
+		 	assert.*/
 		String condicao = ExcelUtils.getCellData(4, Constant.condicaoAssertMassaErro);
 		String mensagem = ExcelUtils.getCellData(3, Constant.mensagemAssertMassaErro);
 		String aviso = pesquisaPage.qtd_Produto.getText();
+		
 		/* Comando responsavel por conferir se o teste agiu como o esperado. */
 		Assert.assertTrue(mensagem, aviso.equals(condicao));
-		
+
 		Prints.tirarPrintsDeFalha("ConsultaPorCategoriaErrado ", driver);
 		DriverFactory.fechaBrowser(driver);
 	}

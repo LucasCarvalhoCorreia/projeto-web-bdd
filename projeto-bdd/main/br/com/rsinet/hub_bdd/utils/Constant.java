@@ -11,8 +11,8 @@ public class Constant {
 	 * Comando responsavel por identificar o endereÃ§o do arquivo para manipulaÃ§Ã£o da
 	 * massa de dados.
 	 */
-//	public static final String Path_TestData = "C:\\Users\\Lucas\\git\\projeto-bdd\\projeto-bdd\\main\\br\\com\\rsinet\\hub_bdd\\testData\\";
-	public static final String Path_TestData = "C:\\Users\\lucas.correia\\git\\jee\\projeto-bdd\\projeto-bdd\\main\\br\\com\\rsinet\\hub_bdd\\testData\\";
+	public static final String Path_TestData = "C:\\Users\\Lucas\\git\\projeto-bdd\\projeto-bdd\\main\\br\\com\\rsinet\\hub_bdd\\testData\\";
+//	public static final String Path_TestData = "C:\\Users\\lucas.correia\\git\\jee\\projeto-bdd\\projeto-bdd\\main\\br\\com\\rsinet\\hub_bdd\\testData\\";
 	/*
 	 * Comando responsavel por identificar o nome do arquivo de manipulaÃ§Ã£o de massa
 	 * de dados.
