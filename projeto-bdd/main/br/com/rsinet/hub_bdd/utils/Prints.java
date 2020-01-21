@@ -20,24 +20,11 @@ public class Prints {
 	 * Cria um arquivo de imagem e atribui um nome a ele especificado na declaração
 	 * do método.
 	 */
-	public static void tirarPrintsDeSucesso(String nomeDaImagem, WebDriver driver) throws Exception {
+	public static void tirarPrints(String nomeDaImagem, WebDriver driver) throws Exception {
 		TakesScreenshot scrShot = ((TakesScreenshot) driver);
 		File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
 		/* Especifica o endereço onde a print será armazenada. */
-		String imageFileDir = "C:\\Users\\lucas.correia\\git\\jee\\projeto-tdd\\target\\sucessos";
+		String imageFileDir = "C:\\Users\\lucas.correia\\git\\jee\\projeto-tdd\\target\\prints-cucumber";
 		FileUtils.copyFile(srcFile, new File(imageFileDir, nomeDaImagem + timestamp() + ".png"));
 	}
-
-	/*
-	 * Cria um arquivo de imagem e atribui um nome a ele especificado na declaração
-	 * do método.
-	 */
-	public static void tirarPrintsDeFalha(String nomeDaImagem, WebDriver driver) throws Exception {
-		TakesScreenshot scrShot = ((TakesScreenshot) driver);
-		File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		/* Especifica o endereço onde a print será armazenada. */
-		String imageFileDir = "C:\\Users\\lucas.correia\\git\\jee\\projeto-tdd\\target\\falhas";
-		FileUtils.copyFile(srcFile, new File(imageFileDir, nomeDaImagem + timestamp() + ".png"));
-	}
-
 }
