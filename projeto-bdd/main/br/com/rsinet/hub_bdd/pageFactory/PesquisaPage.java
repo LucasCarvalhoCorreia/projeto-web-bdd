@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PesquisaPage {
 
@@ -35,7 +37,8 @@ public class PesquisaPage {
 
 	/* Método utilizado para selecionar o produto desejado na tela de pesquisa. */
 	public WebElement selecionaProduto(WebDriver driver, String produto) {
-		WebElement element = driver.findElement(By.linkText(produto));
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.linkText(produto)));
 		return element;
 	}
 

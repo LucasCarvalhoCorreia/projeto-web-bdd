@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CadastroPage {
@@ -84,7 +85,8 @@ public class CadastroPage {
 		this.txt_FirstName.sendKeys(txt_FirstName);
 		this.txt_LastName.sendKeys(txt_LastName);
 		this.txt_Telefone.sendKeys(txt_Telefone);
-		this.combo_Pais.sendKeys(combo_Pais);
+		new Select(this.combo_Pais).selectByVisibleText(combo_Pais);
+//		this.combo_Pais.sendKeys(combo_Pais);
 		this.txt_Cidade.sendKeys(txt_Cidade);
 		this.txt_Endereco.sendKeys(txt_Endereco);
 		this.txt_Estado.sendKeys(txt_Estado);

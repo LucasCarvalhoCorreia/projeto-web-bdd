@@ -24,8 +24,8 @@ public class Prints {
 		TakesScreenshot scrShot = ((TakesScreenshot) driver);
 		File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
 		/* Especifica o endereço onde a print será armazenada. */
-		String imageFileDir = "C:\\Users\\Lucas\\git\\projeto-bdd\\projeto-bdd\\target\\sucessos";
-//		String imageFileDir = "C:\\Users\\lucas.correia\\git\\jee\\projeto-bdd\\projeto-bdd\\target\\sucessos";
+//		String imageFileDir = "C:\\Users\\Lucas\\git\\projeto-bdd\\projeto-bdd\\target\\sucessos";
+		String imageFileDir = "C:\\Users\\lucas.correia\\git\\projeto-bdd\\projeto-bdd\\target\\sucessos";
 		FileUtils.copyFile(srcFile, new File(imageFileDir, nomeDaImagem + timestamp() + ".png"));
 	}
 	
@@ -33,8 +33,8 @@ public class Prints {
 		TakesScreenshot scrShot = ((TakesScreenshot) driver);
 		File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
 		/* Especifica o endereço onde a print será armazenada. */
-		String imageFileDir = "C:\\Users\\Lucas\\git\\projeto-bdd\\projeto-bdd\\target\\falhas";
-//		String imageFileDir = "C:\\Users\\lucas.correia\\git\\jee\\projeto-bdd\\projeto-bdd\\target\\falhas";
+//		String imageFileDir = "C:\\Users\\Lucas\\git\\projeto-bdd\\projeto-bdd\\target\\falhas";
+		String imageFileDir = "C:\\Users\\lucas.correia\\git\\projeto-bdd\\projeto-bdd\\target\\falhas";
 		FileUtils.copyFile(srcFile, new File(imageFileDir, nomeDaImagem + timestamp() + ".png"));
 	}
 }

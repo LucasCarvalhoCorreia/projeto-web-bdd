@@ -1,7 +1,5 @@
 package br.com.rsinet.hub_bdd.stepDefinitions;
 
-import java.util.concurrent.TimeUnit;
-
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -34,10 +32,6 @@ public class ConsultaPorBarraDePesquisa {
 		 	especificada.*/
 		homePage = PageFactory.initElements(driver, HomePage.class);
 		pesquisaPage = PageFactory.initElements(driver, PesquisaPage.class);
-
-		/* Comando responsavel por aguardar o tempo especificado entre as linhas de
-		 	comando.*/
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	@When("^Clicar na lupa$")
@@ -53,13 +47,10 @@ public class ConsultaPorBarraDePesquisa {
 		homePage.pesquisar(txt_Pesquisa);
 	}
 
-	@When("^Fechar a janela de sugestao de produtos$")
-	public void echar_a_janela_de_sugestao_de_produtos() throws Throwable {
-		homePage.bt_FechaSugestao(driver);
-	}
-	
 	@When("^Selecionar o produto desejado$")
 	public void selecionar_o_produto_desejado() throws Throwable {
+		homePage.bt_FechaSugestao(driver);
+
 		String produto = ExcelUtils.getCellData(2, Constant.escolheProduto);
 		pesquisaPage.selecionaProduto(driver, produto).click();
 	}
@@ -90,6 +81,8 @@ public class ConsultaPorBarraDePesquisa {
 	@Then("^Checar no banco de dados e informar que nao foi encontrado nenhum resultado para o produto desejado$")
 	public void checar_no_banco_de_dados_e_informar_que_nao_foi_encontrado_nenhum_resultado_para_o_produto_desejado()
 			throws Throwable {
+		homePage.result_Produto(driver);
+		
 		 /* Comandos responsaveis por receber os valores necessários para acionar o
 		 	assert.*/
 		String elemento = ExcelUtils.getCellData(5, Constant.pesquisaBarraErro);

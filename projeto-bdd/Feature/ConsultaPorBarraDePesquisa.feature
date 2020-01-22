@@ -7,7 +7,6 @@ Background:
 @TesteDeSucesso
 Scenario: Teste de consulta de produto por barra de pesquisa
 	And Digitar e pesquisar o nome do produto desejado
-	And Fechar a janela de sugestao de produtos
     And Selecionar o produto desejado
     Then Checar se o produto selecionado foi encontrado
   

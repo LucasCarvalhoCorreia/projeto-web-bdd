@@ -1,7 +1,5 @@
 package br.com.rsinet.hub_bdd.stepDefinitions;
 
-import java.util.concurrent.TimeUnit;
-
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -13,9 +11,9 @@ import br.com.rsinet.hub_bdd.utils.Constant;
 import br.com.rsinet.hub_bdd.utils.DriverFactory;
 import br.com.rsinet.hub_bdd.utils.ExcelUtils;
 import br.com.rsinet.hub_bdd.utils.Prints;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class ConsultaPorCategoria {
 
@@ -24,7 +22,7 @@ public class ConsultaPorCategoria {
 	private PesquisaPage pesquisaPage;
 	private PagamentoPage pagamentoPage;
 
-	@Given("^Que o usuario esteja na tela inicial com a intencao de realizar uma pesquisa por categoria ou uma compra$")
+	@Given("Que o usuario esteja na tela inicial com a intencao de realizar uma pesquisa por categoria ou uma compra")
 	public void que_o_usuario_esteja_na_tela_inicial_com_a_intencao_de_realizar_uma_pesquisa_por_categoria_ou_uma_compra()
 			throws Throwable {
 		driver = DriverFactory.iniciaBrowser();
@@ -38,17 +36,12 @@ public class ConsultaPorCategoria {
 		homePage = PageFactory.initElements(driver, HomePage.class);
 		pesquisaPage = PageFactory.initElements(driver, PesquisaPage.class);
 		pagamentoPage = PageFactory.initElements(driver, PagamentoPage.class);
-
-		/* Comando responsavel por aguardar o tempo especificado entre as linhas de
-		 	comando.*/
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
-	@When("^Ele efetuar o login$")
+	@When("Ele efetuar o login")
 	public void ele_efetuar_o_login() throws Throwable {
 		 /* Comando responsavel por aguardar o tempo especificado entre as linhas de
 		 	comando.*/
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		homePage.bt_UserIcon();
 
@@ -61,51 +54,47 @@ public class ConsultaPorCategoria {
 		homePage.bt_Logar();
 	}
 
-	@When("^Ele clicar no link da categoria do produto$")
+	@When("Ele clicar no link da categoria do produto")
 	public void ele_clicar_no_link_da_categoria_do_produto() throws Throwable {
 		homePage.clicaProdutoCategoria(driver);
 	}
 
-	@When("^Clicar no produto desejado$")
+	@When("Clicar no produto desejado")
 	public void clicar_no_produto_desejado() throws Throwable {
 		String produto = ExcelUtils.getCellData(5, Constant.clicaProduto);
 		pesquisaPage.selecionaProduto(driver, produto).click();
 	}
 
-	@When("^Clicar no botao de adicionar ao carrinho$")
+	@When("Clicar no botao de adicionar ao carrinho")
 	public void clicar_no_botao_de_adicionar_ao_carrinho() throws Throwable {
 		pesquisaPage.bt_SalvaProduto();
 	}
 
-	@When("^Clicar no pop up de checar o produto no carrinho$")
+	@When("Clicar no pop up de checar o produto no carrinho")
 	public void clicar_no_pop_up_de_checar_o_produto_no_carrinho() throws Throwable {
 		pesquisaPage.bt_Comprar();
 	}
 
-	@When("^Passar para a proxima fase de compra$")
+	@When("Passar para a proxima fase de compra")
 	public void passar_para_a_proxima_fase_de_compra() throws Throwable {
 		pagamentoPage.bt_Next();
 	}
 
-	@When("^Logar na conta Pay$")
+	@When("Logar na conta Pay")
 	public void logar_na_conta_Pay() throws Throwable {
 		String txt_UserNamePay = ExcelUtils.getCellData(1, Constant.userNamePay);
 		String txt_PasswordPay = ExcelUtils.getCellData(2, Constant.passwordPay);
-
-		pagamentoPage.limpaUser();
-		pagamentoPage.limpaPass();
-		
 		pagamentoPage.logaContaPay(txt_UserNamePay, txt_PasswordPay);
 
 		pagamentoPage.check_SavePay();
 	}
 
-	@When("^Clicar no botao de efetuar compra$")
+	@When("Clicar no botao de efetuar compra")
 	public void clicar_no_botao_de_efetuar_compra() throws Throwable {
 		pagamentoPage.bt_Pay();
 	}
 
-	@Then("^Verifica se a compra foi efetuada com sucesso$")
+	@Then("Verifica se a compra foi efetuada com sucesso")
 	public void verifica_se_a_compra_foi_efetuada_com_sucesso() throws Throwable {
 		 /* Comandos responsaveis por receber os valores necessários para acionar o
 		 	assert.*/
@@ -121,35 +110,34 @@ public class ConsultaPorCategoria {
 		DriverFactory.fechaBrowser(driver);
 	}
 
-	@When("^Alterar a quantidade de produtos para compra acima do aceitavel no carrinho$")
+	@When("Alterar a quantidade de produtos para compra acima do aceitavel no carrinho")
 	public void alterar_a_quantidade_de_produtos_para_compra_acima_do_aceitavel_no_carrinho() throws Throwable {
 		String txt_Quantidade = ExcelUtils.getCellData(8, Constant.quantidadeCat);
 		pesquisaPage.quantidadeProduto(txt_Quantidade);
 	}
 
-	@When("^Clicar no botao de adicionar ao carrinho novamente$")
+	@When("Clicar no botao de adicionar ao carrinho novamente")
 	public void clicar_no_botao_de_adicionar_ao_carrinho_novamente() throws Throwable {
 		pesquisaPage.bt_SalvaProduto();
 	}
 
-	@When("^Clicar no pop up de checar o produto no carrinho novamente$")
+	@When("Clicar no pop up de checar o produto no carrinho novamente")
 	public void clicar_no_pop_up_de_checar_o_produto_no_carrinho_novamente() throws Throwable {
 		pesquisaPage.bt_Comprar();
 	}
 
-	@Then("^Checar se a quantidade de produtos solicitada corresponde a quantidade no carrinho$")
-	public void checar_se_a_quantidade_de_produtos_solicitada_corresponde_a_quantidade_no_carrinho() throws Throwable {
-		 /* Comandos responsaveis por receber os valores necessários para acionar o
-		 	assert.*/
+	@Then("Checar se a quantidade de produtos solicitada corresponde a quantidade no carrinho")
+	public void checar_se_a_quantidade_de_produtos_solicitada_corresponde_a_quantidade_no_carrinho() throws Exception {
+		/* Comandos responsaveis por receber os valores necessários para acionar o
+	 	assert.*/
 		String condicao = ExcelUtils.getCellData(4, Constant.condicaoAssertMassaErro);
 		String mensagem = ExcelUtils.getCellData(3, Constant.mensagemAssertMassaErro);
 		String aviso = pesquisaPage.qtd_Produto.getText();
-		
+	
 		/* Comando responsavel por conferir se o teste agiu como o esperado. */
 		Assert.assertTrue(mensagem, aviso.equals(condicao));
 
 		Prints.tirarPrintsDeFalha("ConsultaPorCategoriaErrado ", driver);
 		DriverFactory.fechaBrowser(driver);
 	}
-
 }
