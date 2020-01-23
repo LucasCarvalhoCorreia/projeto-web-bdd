@@ -52,8 +52,7 @@ public class ConsultaPorBarraDePesquisa {
 	public void selecionar_o_produto_desejado() throws Throwable {
 		homePage.bt_FechaSugestao(driver);
 
-		String produto = ExcelUtils.getCellData(2, Constant.escolheProduto);
-		pesquisaPage.selecionaProduto(driver, produto).click();
+		pesquisaPage.selecionaProduto(driver);
 	}
 
 	@Entao("Checar se o produto selecionado foi encontrado")

@@ -35,10 +35,21 @@ public class PesquisaPage {
 	@FindBy(how = How.XPATH, using = "//*[@id=\"Description\"]/h1")
 	public WebElement desc_Produto;
 
+	@FindBy(how = How.ID, using = "27")
+	public WebElement id_Produto;
+
 	/* Método utilizado para selecionar o produto desejado na tela de pesquisa. */
-	public WebElement selecionaProduto(WebDriver driver, String produto) {
+	public WebElement selecionaProdutoCat(WebDriver driver, String produto) {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.linkText(produto)));
+		element.click();
+		return element;
+	}
+	
+	public WebElement selecionaProduto(WebDriver driver) {
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(this.id_Produto));
+		element.click();
 		return element;
 	}
 

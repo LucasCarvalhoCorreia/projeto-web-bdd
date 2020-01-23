@@ -86,7 +86,6 @@ public class CadastroPage {
 		this.txt_LastName.sendKeys(txt_LastName);
 		this.txt_Telefone.sendKeys(txt_Telefone);
 		new Select(this.combo_Pais).selectByVisibleText(combo_Pais);
-//		this.combo_Pais.sendKeys(combo_Pais);
 		this.txt_Cidade.sendKeys(txt_Cidade);
 		this.txt_Endereco.sendKeys(txt_Endereco);
 		this.txt_Estado.sendKeys(txt_Estado);

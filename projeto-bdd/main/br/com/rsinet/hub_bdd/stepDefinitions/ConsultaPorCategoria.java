@@ -63,7 +63,7 @@ public class ConsultaPorCategoria {
 	@Quando("Clicar no produto desejado")
 	public void clicar_no_produto_desejado() throws Throwable {
 		String produto = ExcelUtils.getCellData(5, Constant.clicaProduto);
-		pesquisaPage.selecionaProduto(driver, produto).click();
+		pesquisaPage.selecionaProdutoCat(driver, produto);
 	}
 
 	@Quando("Clicar no botao de adicionar ao carrinho")

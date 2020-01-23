@@ -97,10 +97,11 @@ public class HomePage {
 	 * pesquisa da barra de pesquisa.
 	 */
 	public void bt_FechaSugestao(WebDriver driver) throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(this.bt_FechaSugestao));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 2000);");
+		this.bt_FechaSugestao.click();
 	}
-	
+
 	public void result_Produto(WebDriver driver) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.visibilityOf(this.result_Produto));
