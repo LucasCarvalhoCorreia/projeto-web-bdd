@@ -11,9 +11,9 @@ import br.com.rsinet.hub_bdd.utils.Constant;
 import br.com.rsinet.hub_bdd.utils.DriverFactory;
 import br.com.rsinet.hub_bdd.utils.ExcelUtils;
 import br.com.rsinet.hub_bdd.utils.Prints;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class ConsultaPorCategoria {
 

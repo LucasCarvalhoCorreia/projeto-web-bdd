@@ -6,8 +6,6 @@
 	<artifactId>projeto-bdd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-
-
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -16,10 +14,6 @@
 			<version>3.141.59</version>
 		</dependency>
 
-
-
-
-
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -27,10 +21,6 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-
-
-
-
 
 		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
 		<dependency>
@@ -52,8 +42,6 @@
 			<artifactId>cucumber-java</artifactId>
 			<version>1.2.4</version>
 		</dependency>
-
-
 
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
@@ -81,23 +69,27 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>5.0.0-RC4</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-core</artifactId>
 			<version>1.2.6</version>
 			<type>pom</type>
 		</dependency>
+		
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-jvm</artifactId>
 			<version>5.0.0-RC4</version>
 			<type>pom</type>
 		</dependency>
+		
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
@@ -105,56 +97,63 @@
 			<scope>compile</scope>
 		</dependency>
 
-
-
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-jvm-deps</artifactId>
 			<version>1.0.6</version>
 			<scope>provided</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
 			<version>5.0.1</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>gherkin</artifactId>
 			<version>9.0.0</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<version>2.0.2-beta</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
 			<scope>compile</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.github.leeyazhou</groupId>
 			<artifactId>cobertura</artifactId>
 			<version>2.1.2.RELEASE</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.16</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.vimalselvam</groupId>
 			<artifactId>cucumber-extentsreport</artifactId>
 			<version>3.0.2</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
@@ -173,73 +172,18 @@
 			<version>3.141.59</version>
 		</dependency>
 
-
-
-
-
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>6.14.3</version>
-		</dependency>
-
-
-
-
-
-
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>4.1.1</version>
-		</dependency>
-
-
-
-
-
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>2.12.1</version>
-		</dependency>
-
-
-
-
-
-
-		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.6</version>
-		</dependency>
-
-
-
-
-
 		<dependency>
 			<groupId>net.sourceforge.cobertura</groupId>
 			<artifactId>cobertura</artifactId>
 			<version>2.1.1</version>
 			<scope>test</scope>
 		</dependency>
-
-
-
-
-
+		
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-core</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-
-
-
-
 
 		<dependency>
 			<groupId>info.cukes</groupId>
@@ -247,19 +191,11 @@
 			<version>1.2.5</version>
 		</dependency>
 
-
-
-
-
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-
-
-
-
 
 		<dependency>
 			<groupId>info.cukes</groupId>
@@ -268,21 +204,11 @@
 			<scope>provided</scope>
 		</dependency>
 
-
-
-
-
-
 		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
 			<version>4.11.2</version>
 		</dependency>
-
-
-
-
-
 
 		<dependency>
 			<groupId>info.cukes</groupId>
@@ -291,19 +217,11 @@
 			<scope>provided</scope>
 		</dependency>
 
-
-
-
-
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<version>3.2.4</version>
 		</dependency>
-
-
-
-
 
 		<dependency>
 			<groupId>info.cukes</groupId>
@@ -311,28 +229,18 @@
 			<version>1.2.5</version>
 		</dependency>
 
-
-
-
-
 		<dependency>
 			<groupId>com.vimalselvam</groupId>
 			<artifactId>cucumber-extentsreport</artifactId>
 			<version>2.0.5</version>
 		</dependency>
 
-
-
-
-
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>3.1.2</version>
 		</dependency>
-
-
-
+		
 		<dependency>
 			<groupId>com.sun</groupId>
 			<artifactId>tools</artifactId>
@@ -340,9 +248,6 @@
 			<scope>system</scope>
 			<systemPath>C:\Program Files\Java\jdk1.8.0_231\lib\tools.jar</systemPath>
 		</dependency>
-
+		
 	</dependencies>
-
-
-
 </project>
