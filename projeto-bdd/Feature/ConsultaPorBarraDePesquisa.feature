@@ -1,16 +1,18 @@
-Feature: Consulta de produtos por barra de pesquisa.
+# language: pt
 
-Background: 
-	Given Que o usuario esteja na tela inicial com a intencao de realizar uma consulta por barra de pesquisa
-    When Clicar na lupa
+Funcionalidade: Consulta de produtos por barra de pesquisa.
+
+Contexto: 
+	Dado Que o usuario esteja na tela inicial com a intencao de realizar uma consulta por barra de pesquisa
+    Quando Clicar na lupa
 
 @TesteDeSucesso
-Scenario: Teste de consulta de produto por barra de pesquisa
-	And Digitar e pesquisar o nome do produto desejado
-    And Selecionar o produto desejado
-    Then Checar se o produto selecionado foi encontrado
+Cenario: Teste de consulta de produto por barra de pesquisa
+	E Digitar e pesquisar o nome do produto desejado
+    E Selecionar o produto desejado
+    Quando Checar se o produto selecionado foi encontrado
   
 @TesteDeFalha  
-Scenario: Teste de consulta de produto inexistente por barra de pesquisa
-	And Digitar e pesquisar o nome do produto desejado que nao existe no banco de dados
-    Then Checar no banco de dados e informar que nao foi encontrado nenhum resultado para o produto desejado
+Cenario: Teste de consulta de produto inexistente por barra de pesquisa
+	E Digitar e pesquisar o nome do produto desejado que nao existe no banco de dados
+    Quando Checar no banco de dados e informar que nao foi encontrado nenhum resultado para o produto desejado

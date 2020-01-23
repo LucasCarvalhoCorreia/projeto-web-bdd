@@ -4,6 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class DriverFactory {
 
@@ -12,14 +14,32 @@ public class DriverFactory {
 	/* Método onde inicia o browzer especificado. */
 	/* Maximiza a janela. */
 	/* E entra no site especificado. */
-	public static WebDriver iniciaBrowser() {
-		driver = new ChromeDriver();
+	public enum DriverType {
+		Chrome, FireFox, InternetExplorer;
+	}
 
-		driver.manage().window().maximize();
+	public static WebDriver iniciaBrowser(DriverType tipo, String url) throws Exception {
+		switch (tipo) {
+		case InternetExplorer:
+			driver = new InternetExplorerDriver();
+			driver.manage().window().maximize();
+			driver.get(url);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			break;
+		case FireFox:
+			driver = new FirefoxDriver();
+			driver.manage().window().maximize();
+			driver.get(url);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			break;
+		default:
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get(url);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			break;
 
-		driver.get("http://advantageonlineshopping.com/#/");
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		}
 
 		return driver;
 	}
