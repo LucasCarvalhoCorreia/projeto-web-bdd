@@ -25,7 +25,7 @@ public class ConsultaPorBarraDePesquisa {
 	public void que_o_usuario_esteja_na_tela_inicial_com_a_intencao_de_realizar_uma_consulta_por_barra_de_pesquisa()
 			throws Throwable {
 		driver = DriverFactory.iniciaBrowser(DriverType.Chrome, Constant.URL);
-
+		
 		/* Comando responsavel por ler o arquivo e aba do excel especificados. */
 		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "PesquisaBarra");
 		
@@ -52,10 +52,7 @@ public class ConsultaPorBarraDePesquisa {
 	public void selecionar_o_produto_desejado() throws Throwable {
 		homePage.bt_FechaSugestao(driver);
 
-		String produto = ExcelUtils.getCellData(2, Constant.escolheProduto);
-		pesquisaPage.selecionaProdutoCat(driver, produto);
-
-//		pesquisaPage.selecionaProduto(driver);
+		pesquisaPage.selecionaProduto(driver);
 	}
 
 	@Entao("Checar se o produto selecionado foi encontrado")
@@ -97,5 +94,4 @@ public class ConsultaPorBarraDePesquisa {
 		Prints.tirarPrintsDeFalha("ConsultaPorBarraDePesquisaFalha ", driver);
 		DriverFactory.fechaBrowser(driver);
 	}
-
 }
