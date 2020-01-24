@@ -83,6 +83,8 @@ public class ConsultaPorCategoria {
 
 	@Quando("Logar na conta Pay")
 	public void logar_na_conta_Pay() throws Throwable {
+		/* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
+	 	uma variavel.*/
 		String txt_UserNamePay = ExcelUtils.getCellData(1, Constant.userNamePay);
 		String txt_PasswordPay = ExcelUtils.getCellData(2, Constant.passwordPay);
 		pagamentoPage.logaContaPay(txt_UserNamePay, txt_PasswordPay);
@@ -113,6 +115,8 @@ public class ConsultaPorCategoria {
 
 	@Quando("Alterar a quantidade de produtos para compra acima do aceitavel no carrinho")
 	public void alterar_a_quantidade_de_produtos_para_compra_acima_do_aceitavel_no_carrinho() throws Throwable {
+		/* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
+	 	uma variavel.*/
 		String txt_Quantidade = ExcelUtils.getCellData(8, Constant.quantidadeCat);
 		pesquisaPage.quantidadeProduto(txt_Quantidade);
 	}

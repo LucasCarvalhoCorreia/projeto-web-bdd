@@ -1,7 +1,5 @@
 package br.com.rsinet.hub_bdd.stepDefinitions;
 
-import java.util.concurrent.TimeUnit;
-
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -48,8 +46,6 @@ public class Cadastro {
 
 	@Quando("Preencher o formulario de cadastro")
 	public void preencher_o_formulario_de_cadastro() throws Throwable {
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
 		 /* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
 		  	uma variavel.*/
 		String txt_UserName = ExcelUtils.getCellData(1, Constant.userName);
@@ -86,7 +82,6 @@ public class Cadastro {
 
 	@Entao("Verifica se o usuario esta logado")
 	public void verifica_se_o_usuario_esta_logado() throws Throwable {
-		
 		 /* Comandos responsaveis por receber os valores necessários para acionar o
 		  	assert.*/
 		String condicao = ExcelUtils.getCellData(1, Constant.userName);
@@ -140,6 +135,8 @@ public class Cadastro {
 
 	@Entao("O usuario nao pode efetuar o registro")
 	public void o_usuario_nao_pode_efetuar_o_registro() throws Throwable {
+		/* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
+	 	uma variavel.*/
 		String txt_ChangePassword = ExcelUtils.getCellData(5, Constant.confirmInvalidPassword);
 		cadastroPage.clear();
 		cadastroPage.mudaSenha(txt_ChangePassword);

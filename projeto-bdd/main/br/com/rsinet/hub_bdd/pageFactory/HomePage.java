@@ -105,6 +105,7 @@ public class HomePage {
 //		this.bt_FechaSugestao.click();
 	}
 
+	/*Método responsavel por aguardar o texto do produto selecionado na pesquisa aparecer.*/
 	public void result_Produto(WebDriver driver) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.visibilityOf(this.result_Produto));

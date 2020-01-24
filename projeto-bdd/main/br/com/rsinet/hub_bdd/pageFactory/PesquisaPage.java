@@ -46,6 +46,7 @@ public class PesquisaPage {
 		return element;
 	}
 	
+	/*Método utilizado para selecionar produto na tela de pesquisa por id. */
 	public WebElement selecionaProduto(WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(this.id_Produto));

@@ -14,6 +14,7 @@ public class DriverFactory {
 	/* Método onde inicia o browzer especificado. */
 	/* Maximiza a janela. */
 	/* E entra no site especificado. */
+	/* Aplica um tempo de espera para cada linha de código na sequencia. */
 	public enum DriverType {
 		Chrome, FireFox, InternetExplorer;
 	}
