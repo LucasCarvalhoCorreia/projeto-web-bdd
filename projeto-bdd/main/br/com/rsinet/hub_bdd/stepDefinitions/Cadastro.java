@@ -11,9 +11,9 @@ import br.com.rsinet.hub_bdd.utils.DriverFactory;
 import br.com.rsinet.hub_bdd.utils.DriverFactory.DriverType;
 import br.com.rsinet.hub_bdd.utils.ExcelUtils;
 import br.com.rsinet.hub_bdd.utils.Prints;
-import io.cucumber.java.pt.Dado;
-import io.cucumber.java.pt.Entao;
-import io.cucumber.java.pt.Quando;
+import cucumber.api.java.pt.Dado;
+import cucumber.api.java.pt.Entao;
+import cucumber.api.java.pt.Quando;
 
 public class Cadastro {
 
@@ -21,7 +21,7 @@ public class Cadastro {
 	private HomePage homePage;
 	private CadastroPage cadastroPage;
 
-	@Dado("Que o usuario esteja na tela inicial com a intencao de realizar um cadastro")
+	@Dado("^Que o usuario esteja na tela inicial com a intencao de realizar um cadastro$")
 	public void que_o_usuario_esteja_na_tela_inicial_Sucesso() throws Throwable {
 		driver = DriverFactory.iniciaBrowser(DriverType.Chrome, Constant.URL);
 
@@ -34,17 +34,17 @@ public class Cadastro {
 		cadastroPage = PageFactory.initElements(driver, CadastroPage.class);
 	}
 
-	@Quando("Ele clicar no link de login")
+	@Quando("^Ele clicar no link de login$")
 	public void ele_clicar_no_link_de_login() throws Throwable {
 		homePage.bt_UserIcon();
 	}
 
-	@Quando("Clicar no link de cadastrar")
+	@Quando("^Clicar no link de cadastrar$")
 	public void clicar_no_link_de_cadastrar() throws Throwable {
 		homePage.bt_CriarNovaConta();
 	}
 
-	@Quando("Preencher o formulario de cadastro")
+	@Quando("^Preencher o formulario de cadastro$")
 	public void preencher_o_formulario_de_cadastro() throws Throwable {
 		 /* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
 		  	uma variavel.*/
@@ -65,22 +65,22 @@ public class Cadastro {
 				txt_LastName, txt_Telefone, combo_Pais, txt_Cidade, txt_Endereco, txt_Estado, txt_Cep);
 	}
 
-	@Quando("Clicar na caixa de receber ofertas")
+	@Quando("^Clicar na caixa de receber ofertas$")
 	public void clicar_na_caixa_de_receber_ofertas() throws Throwable {
 		cadastroPage.check_Offers();
 	}
 
-	@Quando("Clicar no botao de aceitar os termos")
+	@Quando("^Clicar no botao de aceitar os termos$")
 	public void clicar_no_botao_de_aceitar_os_termos() throws Throwable {
 		cadastroPage.check_Agree();
 	}
 
-	@Quando("Clicar no botao de registrar")
+	@Quando("^Clicar no botao de registrar$")
 	public void clicar_no_botao_de_registrar() throws Throwable {
 		cadastroPage.bt_Registrar();
 	}
 
-	@Entao("Verifica se o usuario esta logado")
+	@Entao("^Verifica se o usuario esta logado$")
 	public void verifica_se_o_usuario_esta_logado() throws Throwable {
 		 /* Comandos responsaveis por receber os valores necessários para acionar o
 		  	assert.*/
@@ -97,14 +97,14 @@ public class Cadastro {
 		DriverFactory.fechaBrowser(driver);
 	}
 
-	@Quando("Preencher o formulario de cadastro com a confirmacao de senha diferente da senha")
+	@Quando("^Preencher o formulario de cadastro com a confirmacao de senha diferente da senha$")
 	public void preencher_o_formulario_de_cadastro_com_a_confirmacao_de_senha_diferente_da_senha() throws Throwable {
 		/* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
 		 	uma variavel.*/
 		String txt_UserName = ExcelUtils.getCellData(1, Constant.userName);
 		String txt_Email = ExcelUtils.getCellData(2, Constant.email);
 		String txt_Password = ExcelUtils.getCellData(3, Constant.password);
-		String txt_ConfirmPassword = ExcelUtils.getCellData(4, Constant.confirmPassword);
+		String txt_ConfirmPassword = ExcelUtils.getCellData(5, Constant.confirmPassword);
 		String txt_FirstName = ExcelUtils.getCellData(6, Constant.firstName);
 		String txt_LastName = ExcelUtils.getCellData(7, Constant.lastName);
 		String txt_Telefone = ExcelUtils.getCellData(8, Constant.telefone);
@@ -118,22 +118,22 @@ public class Cadastro {
 				txt_LastName, txt_Telefone, combo_Pais, txt_Cidade, txt_Endereco, txt_Estado, txt_Cep);
 	}
 
-	@Quando("Clicar na caixa de receber ofertas novamente")
+	@Quando("^Clicar na caixa de receber ofertas novamente$")
 	public void clicar_na_caixa_de_receber_ofertas_novamente() throws Throwable {
 		cadastroPage.check_Offers();
 	}
 
-	@Quando("Clicar no botao de aceitar os termos novamente")
+	@Quando("^Clicar no botao de aceitar os termos novamente$")
 	public void clicar_no_botao_de_aceitar_os_termos_novamente() throws Throwable {
 		cadastroPage.check_Agree();
 	}
 
-	@Quando("Clicar no botao de registrar novamente")
+	@Quando("^Clicar no botao de registrar novamente$")
 	public void clicar_no_botao_de_registrar_novamente() throws Throwable {
 		cadastroPage.bt_Registrar();
 	}
 
-	@Entao("O usuario nao pode efetuar o registro")
+	@Entao("^O usuario nao pode efetuar o registro$")
 	public void o_usuario_nao_pode_efetuar_o_registro() throws Throwable {
 		/* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
 	 	uma variavel.*/
