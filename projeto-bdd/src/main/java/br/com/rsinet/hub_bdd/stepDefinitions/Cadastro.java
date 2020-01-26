@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import br.com.rsinet.hub_bdd.pageFactory.CadastroPage;
 import br.com.rsinet.hub_bdd.pageFactory.HomePage;
-import br.com.rsinet.hub_bdd.utils.Constant;
+import br.com.rsinet.hub_bdd.utils.Constantes;
 import br.com.rsinet.hub_bdd.utils.DriverFactory;
 import br.com.rsinet.hub_bdd.utils.DriverFactory.DriverType;
 import br.com.rsinet.hub_bdd.utils.ExcelUtils;
@@ -21,12 +21,13 @@ public class Cadastro {
 	private HomePage homePage;
 	private CadastroPage cadastroPage;
 
+	/* Tag que retorna o storie descrito no feature para expressar o cenario em forma de codigo. */
 	@Dado("^Que o usuario esteja na tela inicial com a intencao de realizar um cadastro$")
 	public void que_o_usuario_esteja_na_tela_inicial_Sucesso() throws Throwable {
-		driver = DriverFactory.iniciaBrowser(DriverType.Chrome, Constant.URL);
+		driver = DriverFactory.iniciaBrowser(DriverType.Chrome, Constantes.URL);
 
 		/* Comando responsavel por ler o arquivo e aba do excel especificados. */
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "Cadastro");
+		ExcelUtils.setExcelFile(Constantes.Path_TestData + Constantes.File_TestData, "Cadastro");
 
 		 /* Comando responsavel por iniciar os elementos dentro da pageFactory
 		  	especificada.*/
@@ -48,18 +49,18 @@ public class Cadastro {
 	public void preencher_o_formulario_de_cadastro() throws Throwable {
 		 /* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
 		  	uma variavel.*/
-		String txt_UserName = ExcelUtils.getCellData(1, Constant.userName);
-		String txt_Email = ExcelUtils.getCellData(2, Constant.email);
-		String txt_Password = ExcelUtils.getCellData(3, Constant.password);
-		String txt_ConfirmPassword = ExcelUtils.getCellData(4, Constant.confirmPassword);
-		String txt_FirstName = ExcelUtils.getCellData(6, Constant.firstName);
-		String txt_LastName = ExcelUtils.getCellData(7, Constant.lastName);
-		String txt_Telefone = ExcelUtils.getCellData(8, Constant.telefone);
-		String combo_Pais = ExcelUtils.getCellData(9, Constant.pais);
-		String txt_Cidade = ExcelUtils.getCellData(10, Constant.cidade);
-		String txt_Endereco = ExcelUtils.getCellData(11, Constant.endereco);
-		String txt_Estado = ExcelUtils.getCellData(12, Constant.estado);
-		String txt_Cep = ExcelUtils.getCellData(13, Constant.cep);
+		String txt_UserName = ExcelUtils.getCellData(1, Constantes.userName);
+		String txt_Email = ExcelUtils.getCellData(2, Constantes.email);
+		String txt_Password = ExcelUtils.getCellData(3, Constantes.password);
+		String txt_ConfirmPassword = ExcelUtils.getCellData(4, Constantes.confirmPassword);
+		String txt_FirstName = ExcelUtils.getCellData(6, Constantes.firstName);
+		String txt_LastName = ExcelUtils.getCellData(7, Constantes.lastName);
+		String txt_Telefone = ExcelUtils.getCellData(8, Constantes.telefone);
+		String combo_Pais = ExcelUtils.getCellData(9, Constantes.pais);
+		String txt_Cidade = ExcelUtils.getCellData(10, Constantes.cidade);
+		String txt_Endereco = ExcelUtils.getCellData(11, Constantes.endereco);
+		String txt_Estado = ExcelUtils.getCellData(12, Constantes.estado);
+		String txt_Cep = ExcelUtils.getCellData(13, Constantes.cep);
 
 		cadastroPage.cadastrarUsuario(txt_UserName, txt_Email, txt_Password, txt_ConfirmPassword, txt_FirstName,
 				txt_LastName, txt_Telefone, combo_Pais, txt_Cidade, txt_Endereco, txt_Estado, txt_Cep);
@@ -84,8 +85,8 @@ public class Cadastro {
 	public void verifica_se_o_usuario_esta_logado() throws Throwable {
 		 /* Comandos responsaveis por receber os valores necessários para acionar o
 		  	assert.*/
-		String condicao = ExcelUtils.getCellData(1, Constant.userName);
-		String mensagem = ExcelUtils.getCellData(3, Constant.mensagemAssertCadastroSucesso);
+		String condicao = ExcelUtils.getCellData(1, Constantes.userName);
+		String mensagem = ExcelUtils.getCellData(3, Constantes.mensagemAssertCadastroSucesso);
 
 		cadastroPage.pega_UserLogon(driver);
 		String pass = cadastroPage.user_Logon.getText();
@@ -101,18 +102,18 @@ public class Cadastro {
 	public void preencher_o_formulario_de_cadastro_com_a_confirmacao_de_senha_diferente_da_senha() throws Throwable {
 		/* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
 		 	uma variavel.*/
-		String txt_UserName = ExcelUtils.getCellData(1, Constant.userName);
-		String txt_Email = ExcelUtils.getCellData(2, Constant.email);
-		String txt_Password = ExcelUtils.getCellData(3, Constant.password);
-		String txt_ConfirmPassword = ExcelUtils.getCellData(5, Constant.confirmPassword);
-		String txt_FirstName = ExcelUtils.getCellData(6, Constant.firstName);
-		String txt_LastName = ExcelUtils.getCellData(7, Constant.lastName);
-		String txt_Telefone = ExcelUtils.getCellData(8, Constant.telefone);
-		String combo_Pais = ExcelUtils.getCellData(9, Constant.pais);
-		String txt_Cidade = ExcelUtils.getCellData(10, Constant.cidade);
-		String txt_Endereco = ExcelUtils.getCellData(11, Constant.endereco);
-		String txt_Estado = ExcelUtils.getCellData(12, Constant.estado);
-		String txt_Cep = ExcelUtils.getCellData(13, Constant.cep);
+		String txt_UserName = ExcelUtils.getCellData(1, Constantes.userName);
+		String txt_Email = ExcelUtils.getCellData(2, Constantes.email);
+		String txt_Password = ExcelUtils.getCellData(3, Constantes.password);
+		String txt_ConfirmPassword = ExcelUtils.getCellData(5, Constantes.confirmPassword);
+		String txt_FirstName = ExcelUtils.getCellData(6, Constantes.firstName);
+		String txt_LastName = ExcelUtils.getCellData(7, Constantes.lastName);
+		String txt_Telefone = ExcelUtils.getCellData(8, Constantes.telefone);
+		String combo_Pais = ExcelUtils.getCellData(9, Constantes.pais);
+		String txt_Cidade = ExcelUtils.getCellData(10, Constantes.cidade);
+		String txt_Endereco = ExcelUtils.getCellData(11, Constantes.endereco);
+		String txt_Estado = ExcelUtils.getCellData(12, Constantes.estado);
+		String txt_Cep = ExcelUtils.getCellData(13, Constantes.cep);
 
 		cadastroPage.cadastrarUsuario(txt_UserName, txt_Email, txt_Password, txt_ConfirmPassword, txt_FirstName,
 				txt_LastName, txt_Telefone, combo_Pais, txt_Cidade, txt_Endereco, txt_Estado, txt_Cep);
@@ -137,7 +138,7 @@ public class Cadastro {
 	public void o_usuario_nao_pode_efetuar_o_registro() throws Throwable {
 		/* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
 	 	uma variavel.*/
-		String txt_ChangePassword = ExcelUtils.getCellData(5, Constant.confirmInvalidPassword);
+		String txt_ChangePassword = ExcelUtils.getCellData(5, Constantes.confirmInvalidPassword);
 		cadastroPage.clear();
 		cadastroPage.mudaSenha(txt_ChangePassword);
 
@@ -145,8 +146,8 @@ public class Cadastro {
 
 		/* Comandos responsaveis por receber os valores necessários para acionar o
 		 	assert.*/
-		String condicao = ExcelUtils.getCellData(1, Constant.condicaoAssertCadastroErro);
-		String mensagem = ExcelUtils.getCellData(2, Constant.mensagemAssertCadastroErro);
+		String condicao = ExcelUtils.getCellData(1, Constantes.condicaoAssertCadastroErro);
+		String mensagem = ExcelUtils.getCellData(2, Constantes.mensagemAssertCadastroErro);
 		String pass = cadastroPage.not_Password.getText();
 		/* Comando responsavel por conferir se o teste agiu como o esperado. */
 		Assert.assertTrue(mensagem, pass.equals(condicao));

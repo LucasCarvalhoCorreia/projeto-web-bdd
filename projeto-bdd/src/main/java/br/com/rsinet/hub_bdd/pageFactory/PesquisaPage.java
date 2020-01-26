@@ -10,14 +10,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PesquisaPage {
 
-	/* Area onde são encontrados os elementos na pagina de pesquisa. */
+	/* Area onde sao encontrados os elementos na pagina de pesquisa. */
 
 	/*
-	 * Encontra os Editores de Texto, Botões, ComboBox e CheckBox para o campo
-	 * correspondente ao nome da variável e atribui na mesma.
+	 * Encontra os Editores de Texto, Botoes, ComboBox e CheckBox para o campo
+	 * correspondente ao nome da variavel e atribui na mesma.
 	 */
 	/*
-	 * Utilizado para preencher as informações de pesquisa e inicio de compra de
+	 * Utilizado para preencher as informacoes de pesquisa e inicio de compra de
 	 * produto.
 	 */
 	@FindBy(how = How.NAME, using = "save_to_cart")
@@ -38,7 +38,7 @@ public class PesquisaPage {
 	@FindBy(how = How.ID, using = "27")
 	public WebElement id_Produto;
 
-	/* Método utilizado para selecionar o produto desejado na tela de pesquisa. */
+	/* Metodo utilizado para selecionar o produto desejado na tela de pesquisa. */
 	public WebElement selecionaProdutoCat(WebDriver driver, String produto) {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.linkText(produto)));
@@ -46,7 +46,7 @@ public class PesquisaPage {
 		return element;
 	}
 	
-	/*Método utilizado para selecionar produto na tela de pesquisa por id. */
+	/*Metodo utilizado para selecionar produto na tela de pesquisa por id. */
 	public WebElement selecionaProduto(WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(this.id_Produto));
@@ -54,18 +54,18 @@ public class PesquisaPage {
 		return element;
 	}
 
-	/* Método utilizado para clicar no botão de adicionar o produto ao carrinho. */
+	/* Metodo utilizado para clicar no botao de adicionar o produto ao carrinho. */
 	public void bt_SalvaProduto() {
 		this.bt_SalvaProduto.click();
 	}
 
-	/* Método utilizado para clicar no botão de iniciar a compra do produto. */
+	/* Metodo utilizado para clicar no botao de iniciar a compra do produto. */
 	public void bt_Comprar() {
 		this.bt_Comprar.click();
 	}
 
 	/*
-	 * Método utilizado para alterar a quantidade de produtos que serão adicionados
+	 * Metodo utilizado para alterar a quantidade de produtos que serao adicionados
 	 * no carrinho de compras.
 	 */
 	public void quantidadeProduto(String txt_Quantidade) {

@@ -38,28 +38,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>1.2.4</version>
-		</dependency>
-
-		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>1.2.5</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>3.141.59</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
@@ -70,38 +51,10 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>1.2.5</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>1.2.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>3.141.59</version>
-		</dependency>
-
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>5.0.0-RC4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-core</artifactId>
-			<version>1.2.6</version>
-			<type>pom</type>
 		</dependency>
 
 		<dependency>
@@ -144,41 +97,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>com.github.leeyazhou</groupId>
 			<artifactId>cobertura</artifactId>
 			<version>2.1.2.RELEASE</version>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>3.16</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>3.141.59</version>
-		</dependency>
-
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-core</artifactId>
-			<version>1.2.5</version>
 		</dependency>
 
 		<dependency>
@@ -201,12 +122,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>net.masterthought</groupId>
-			<artifactId>cucumber-reporting</artifactId>
-			<version>4.11.2</version>
-		</dependency>
-
-		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>gherkin</artifactId>
 			<version>2.12.2</version>
@@ -223,14 +138,6 @@
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-picocontainer</artifactId>
 			<version>1.2.5</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.sun</groupId>
-			<artifactId>tools</artifactId>
-			<version>1.8</version>
-			<scope>system</scope>
-			<systemPath>C:\Program Files\Java\jdk1.8.0_231\lib\tools.jar</systemPath>
 		</dependency>
 
 		<dependency>

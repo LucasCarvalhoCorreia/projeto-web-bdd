@@ -9,13 +9,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PagamentoPage {
 	
-	/* Area onde são encontrados os elementos na pagina de pagamentos. */
+	/* Area onde sao encontrados os elementos na pagina de pagamentos. */
 
 	/*
-	 * Encontra os Editores de Texto, Botões, ComboBox e CheckBox para o campo
-	 * correspondente ao nome da variável e atribui na mesma.
+	 * Encontra os Editores de Texto, Botoes, ComboBox e CheckBox para o campo
+	 * correspondente ao nome da variavel e atribui na mesma.
 	 */
-	/* Utilizado para preencher as informações de Login na conta Pay. */
+	/* Utilizado para preencher as informacoes de Login na conta Pay. */
 	@FindBy(how = How.ID, using = "next_btn")
 	private WebElement bt_Next;
 
@@ -35,14 +35,14 @@ public class PagamentoPage {
 	public WebElement lbl_Pago;
 
 	/*
-	 * Método utilizado para clicar no botão para a proxima etapa de compra de
+	 * Metodo utilizado para clicar no botao para a proxima etapa de compra de
 	 * produto.
 	 */
 	public void bt_Next() {
 		this.bt_Next.click();
 	}
 
-	/* Método utilizado para logar na conta Pay. */
+	/* Metodo utilizado para logar na conta Pay. */
 	public void logaContaPay(String txt_UserNamePay, String txt_PasswordPay) {
 		this.txt_UserNamePay.clear();
 		this.txt_UserNamePay.sendKeys(txt_UserNamePay);
@@ -50,18 +50,18 @@ public class PagamentoPage {
 		this.txt_PasswordPay.sendKeys(txt_PasswordPay);
 	}
 
-	/* Método utilizado para clicar na check box de salvar login da conta Pay. */
+	/* Metodo utilizado para clicar na check box de salvar login da conta Pay. */
 	public void check_SavePay() {
 		this.check_SavePay.click();
 	}
 
-	/* Método utilizado para clicar no botão para comprar o produto. */
+	/* Metodo utilizado para clicar no botao para comprar o produto. */
 	public void bt_Pay() {
 		this.bt_Pay.click();
 	}
 
 	/*
-	 * Método utilizado para aguardar e pegar a mensagem de confirmação de compra da
+	 * Metodo utilizado para aguardar e pegar a mensagem de confirmacao de compra da
 	 * tela de pagamento.
 	 */
 	public void pega_Pago(WebDriver driver) {

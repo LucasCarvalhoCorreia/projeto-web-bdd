@@ -11,13 +11,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage {
 
-	/* Area onde são encontrados os elementos na pagina de inicio. */
+	/* Area onde sao encontrados os elementos na pagina de inicio. */
 
 	/*
-	 * Encontra os Editores de Texto, Botões, ComboBox e CheckBox para o campo
-	 * correspondente ao nome da variável e atribui na mesma.
+	 * Encontra os Editores de Texto, Botoes, ComboBox e CheckBox para o campo
+	 * correspondente ao nome da variavel e atribui na mesma.
 	 */
-	/* Utilizado para preencher as informações de Login e Pesquisa. */
+	/* Utilizado para preencher as informacoes de Login e Pesquisa. */
 	@FindBy(how = How.ID, using = "hrefUserIcon")
 	private WebElement bt_UserIcon;
 
@@ -49,31 +49,31 @@ public class HomePage {
 	public WebElement result_Produto;
 
 	/*
-	 * Método utilizado para clicar no botão para acessar a pagina de criar nova
+	 * Metodo utilizado para clicar no botao para acessar a pagina de criar nova
 	 * conta.
 	 */
 	public void bt_CriarNovaConta() {
 		this.bt_CriarNovaConta.sendKeys(Keys.ENTER);
 	}
 
-	/* Método utilizado para clicar no botão da área do usuário. */
+	/* Metodo utilizado para clicar no botao da area do usuario. */
 	public void bt_UserIcon() {
 		this.bt_UserIcon.click();
 	}
 
-	/* Método tuilizado para preencher os dados de login. */
+	/* Metodo tuilizado para preencher os dados de login. */
 	public void preencheLogin(String txt_UserLogin, String txt_PasswordLogin) {
 		this.txt_UserName.sendKeys(txt_UserLogin);
 		this.txt_Password.sendKeys(txt_PasswordLogin);
 	}
 
-	/* Método tuilizado para clicar no botão de logar. */
+	/* Metodo tuilizado para clicar no botao de logar. */
 	public void bt_Logar() {
 		this.bt_Logar.sendKeys(Keys.ENTER);
 	}
 
 	/*
-	 * Método tuilizado para clicar na categoria de produtos na pagina inicial
+	 * Metodo tuilizado para clicar na categoria de produtos na pagina inicial
 	 * desejada.
 	 */
 	public void clicaProdutoCategoria(WebDriver driver) {
@@ -82,18 +82,18 @@ public class HomePage {
 		executor.executeScript("arguments[0].click();", elemento);
 	}
 
-	/* Método tuilizado para clicar no botão de lupa para realizar consultas. */
+	/* Metodo tuilizado para clicar no botao de lupa para realizar consultas. */
 	public void bt_Lupa() {
 		this.bt_Lupa.click();
 	}
 
-	/* Método tuilizado para pesquisar produtos na barra de pesquisa. */
+	/* Metodo tuilizado para pesquisar produtos na barra de pesquisa. */
 	public void pesquisar(String txt_Pesquisa) {
 		this.txt_Pesquisa.sendKeys(txt_Pesquisa + Keys.ENTER);
 	}
 
 	/*
-	 * Método tuilizado para clicar no botão de fechar a janela de sugestões de
+	 * Metodo tuilizado para clicar no botao de fechar a janela de sugestoes de
 	 * pesquisa da barra de pesquisa.
 	 */
 	public void bt_FechaSugestao(WebDriver driver) throws InterruptedException {
@@ -102,7 +102,7 @@ public class HomePage {
 		this.bt_FechaSugestao.click();
 	}
 
-	/*Método responsavel por aguardar o texto do produto selecionado na pesquisa aparecer.*/
+	/*Metodo responsavel por aguardar o texto do produto selecionado na pesquisa aparecer.*/
 	public void result_Produto(WebDriver driver) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.visibilityOf(this.result_Produto));

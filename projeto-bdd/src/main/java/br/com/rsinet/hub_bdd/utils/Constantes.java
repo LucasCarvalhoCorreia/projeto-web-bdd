@@ -1,6 +1,6 @@
 package br.com.rsinet.hub_bdd.utils;
 
-public class Constant {
+public class Constantes {
 
 	/*
 	 * Comando responsavel por identificar a url do site que serÃ£o aplicados a massa
@@ -11,7 +11,7 @@ public class Constant {
 	 * Comando responsavel por identificar o endereÃ§o do arquivo para manipulaÃ§Ã£o da
 	 * massa de dados.
 	 */
-	public static final String Path_TestData = "main\\br\\com\\rsinet\\hub_bdd\\testData\\";
+	public static final String Path_TestData = "src\\main\\java\\br\\com\\rsinet\\hub_bdd\\testData\\";
 	/*
 	 * Comando responsavel por identificar o nome do arquivo de manipulaÃ§Ã£o de massa
 	 * de dados.

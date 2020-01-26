@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import br.com.rsinet.hub_bdd.pageFactory.HomePage;
 import br.com.rsinet.hub_bdd.pageFactory.PesquisaPage;
-import br.com.rsinet.hub_bdd.utils.Constant;
+import br.com.rsinet.hub_bdd.utils.Constantes;
 import br.com.rsinet.hub_bdd.utils.DriverFactory;
 import br.com.rsinet.hub_bdd.utils.DriverFactory.DriverType;
 import br.com.rsinet.hub_bdd.utils.ExcelUtils;
@@ -21,13 +21,14 @@ public class ConsultaPorBarraDePesquisa {
 	private HomePage homePage;
 	private PesquisaPage pesquisaPage;
 
+	/* Tag que retorna o storie descrito no feature para expressar o cenario em forma de codigo. */
 	@Dado("^Que o usuario esteja na tela inicial com a intencao de realizar uma consulta por barra de pesquisa$")
 	public void que_o_usuario_esteja_na_tela_inicial_com_a_intencao_de_realizar_uma_consulta_por_barra_de_pesquisa()
 			throws Throwable {
-		driver = DriverFactory.iniciaBrowser(DriverType.Chrome, Constant.URL);
+		driver = DriverFactory.iniciaBrowser(DriverType.Chrome, Constantes.URL);
 		
 		/* Comando responsavel por ler o arquivo e aba do excel especificados. */
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData, "PesquisaBarra");
+		ExcelUtils.setExcelFile(Constantes.Path_TestData + Constantes.File_TestData, "PesquisaBarra");
 		
 		 /* Comando responsavel por iniciar os elementos dentro da pageFactory
 		 	especificada.*/
@@ -44,7 +45,7 @@ public class ConsultaPorBarraDePesquisa {
 	public void digitar_e_pesquisar_o_nome_do_produto_desejado() throws Throwable {
 		 /* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
 		 	uma variavel.*/
-		String txt_Pesquisa = (ExcelUtils.getCellData(1, Constant.pesquisaBarra));
+		String txt_Pesquisa = (ExcelUtils.getCellData(1, Constantes.pesquisaBarra));
 		homePage.pesquisar(txt_Pesquisa);
 	}
 
@@ -59,8 +60,8 @@ public class ConsultaPorBarraDePesquisa {
 	public void checar_se_o_produto_selecionado_foi_encontrado() throws Throwable {
 		 /* Comandos responsaveis por receber os valores necessários para acionar o
 		 	assert.*/
-		String condicao = ExcelUtils.getCellData(1, Constant.condicaoAssertBarra);
-		String mensagem = ExcelUtils.getCellData(2, Constant.mensagemAssertBarra);
+		String condicao = ExcelUtils.getCellData(1, Constantes.condicaoAssertBarra);
+		String mensagem = ExcelUtils.getCellData(2, Constantes.mensagemAssertBarra);
 		String elemento = pesquisaPage.desc_Produto.getText();
 		
 		/* Comando responsavel por conferir se o teste agiu como o esperado. */
@@ -74,7 +75,7 @@ public class ConsultaPorBarraDePesquisa {
 	public void digitar_e_pesquisar_o_nome_do_produto_desejado_que_nao_existe_no_banco_de_dados() throws Throwable {
 		 /* Atribui o valor recebido pela coluna e linha especificada no arquivo excel a
 		 	uma variavel.*/
-		String txt_Pesquisa = (ExcelUtils.getCellData(5, Constant.pesquisaBarraErro));
+		String txt_Pesquisa = (ExcelUtils.getCellData(5, Constantes.pesquisaBarraErro));
 		homePage.pesquisar(txt_Pesquisa);
 	}
 
@@ -85,7 +86,7 @@ public class ConsultaPorBarraDePesquisa {
 		
 		 /* Comandos responsaveis por receber os valores necessários para acionar o
 		 	assert.*/
-		String elemento = ExcelUtils.getCellData(5, Constant.pesquisaBarraErro);
+		String elemento = ExcelUtils.getCellData(5, Constantes.pesquisaBarraErro);
 		String resposta = homePage.result_Produto.getText();
 		
 		/* Comando responsavel por conferir se o teste agiu como o esperado. */
