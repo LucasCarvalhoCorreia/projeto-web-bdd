@@ -28,6 +28,7 @@ projeto-bdd
       - Constantes.java (classe responsável por localizar a coluna de cada elemento utilizado nos testes dentro do arquivo de massa de dados.)
       - DriverFactory.java (classe que contém métodos responsáveis por iniciar e fechar o browser dos testes.)
       - ExcelUtils.java (classe responsável por fazer a comunicação dos testes com o arquivo de massa de dados.)
+      - PegaMassa.java (classe responsável por pegar dados do arquivo de massa e retornar na classe de teste.)
       - Prints.java (classe que contem métodos responsáveis por tirar prints dos cenários de teste.)
   
   - configs
