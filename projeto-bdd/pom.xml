@@ -52,42 +52,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>5.0.0-RC4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-jvm</artifactId>
-			<version>5.0.0-RC4</version>
-			<type>pom</type>
-		</dependency>
-
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>5.0.0-RC4</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-jvm-deps</artifactId>
-			<version>1.0.6</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
 			<version>5.0.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>gherkin</artifactId>
-			<version>9.0.0</version>
 		</dependency>
 
 		<dependency>
