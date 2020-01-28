@@ -10,7 +10,7 @@ projeto-bdd
     - br.com.rsinet.hub_bdd.pageFactory (pacote onde foram criadas as classes de manipulação de elementos por pagina.)
       - CadastroPage.java (classe responsável por executar os elementos localizados na página de cadastro.)
       - HomePage.java (classe responsável por executar os elementos localizados na página inicial.)
-      - PagamentoPage.java (classe responsável por executar os elementos localizados na página de pagamento dos produtos.) -      PesquisaPage.java (classe responsável por executar os elementos localizados na página de pesquisa de produtos.)
+      - PagamentoPage.java (classe responsável por executar os elementos localizados na página de pagamento dos produtos.) -                   - PesquisaPage.java (classe responsável por executar os elementos localizados na página de pesquisa de produtos.)
     
     - br.com.rsinet.hub_bdd.stepDefinitions (pacote onde foram criadas as classes para executar os cenários descritos nas features.)
       - Cadastro.java (classe responsável por testar os cenários descritos na feature de cadastro.)
