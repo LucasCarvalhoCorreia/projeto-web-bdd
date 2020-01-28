@@ -3,24 +3,24 @@ package br.com.rsinet.hub_bdd.utils;
 public class Constantes {
 
 	/*
-	 * Comando responsavel por identificar a url do site que serÃ£o aplicados a massa
+	 * Comando responsavel por identificar a url do site que serao aplicados a massa
 	 * de dados.
 	 */
 	public static final String URL = "http://advantageonlineshopping.com/#/";
 	/*
-	 * Comando responsavel por identificar o endereÃ§o do arquivo para manipulaÃ§Ã£o da
+	 * Comando responsavel por identificar o endereco do arquivo para manipulaco da
 	 * massa de dados.
 	 */
 	public static final String Path_TestData = "src\\main\\java\\br\\com\\rsinet\\hub_bdd\\testData\\";
 	/*
-	 * Comando responsavel por identificar o nome do arquivo de manipulaÃ§Ã£o de massa
+	 * Comando responsavel por identificar o nome do arquivo de manipulaco de massa
 	 * de dados.
 	 */
 	public static final String File_TestData = "MassaDeDados.xlsx";
 
 	/*
-	 * Ã�rea onde sÃ£o identificados as celulas de dentro do arquivo de massa de dados
-	 * atravÃ©s da coluna e armazenados nas variaveis.
+	 * Area onde sao identificados as celulas de dentro do arquivo de massa de dados
+	 * atraves da coluna e armazenados nas variaveis.
 	 */
 	// Cadastro
 	public static final int userName = 1;

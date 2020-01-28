@@ -2,6 +2,8 @@ package br.com.rsinet.hub_bdd.utils;
 
 public class PegaMassa {
 	
+	/* Classe responsável por pegar os dados do arquivo de massa e jogar na classe de teste.*/
+	
 	// Cadastro
 	public String UserName() throws Exception {
 		return ExcelUtils.getCellData(1, Constantes.userName);

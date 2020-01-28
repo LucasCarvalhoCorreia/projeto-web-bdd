@@ -18,12 +18,12 @@ public class Prints {
 
 	/*
 	 * Cria um arquivo de imagem e atribui um nome a ele especificado na declaração
-	 * do método.
+	 * do metodo.
 	 */
 	public static void tirarPrintsDeSucesso(String nomeDaImagem, WebDriver driver) throws Exception {
 		TakesScreenshot scrShot = ((TakesScreenshot) driver);
 		File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		/* Especifica o endereço onde a print será armazenada. */
+		/* Especifica o endereço onde a print sera armazenada. */
 		String imageFileDir = "target\\sucessos";
 		FileUtils.copyFile(srcFile, new File(imageFileDir, nomeDaImagem + timestamp() + ".png"));
 	}
@@ -31,7 +31,7 @@ public class Prints {
 	public static void tirarPrintsDeFalha(String nomeDaImagem, WebDriver driver) throws Exception {
 		TakesScreenshot scrShot = ((TakesScreenshot) driver);
 		File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		/* Especifica o endereço onde a print será armazenada. */
+		/* Especifica o endereço onde a print sera armazenada. */
 		String imageFileDir = "target\\falhas";
 		FileUtils.copyFile(srcFile, new File(imageFileDir, nomeDaImagem + timestamp() + ".png"));
 	}
